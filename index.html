@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Yang Jiaxuan 的个人网站。" />
+    <meta name="theme-color" content="#f3efe5" />
+    <title>Yang Jiaxuan</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f3efe5;
+        --ink: #151515;
+        --red: #d63c2f;
+        --line: rgba(21, 21, 21, 0.22);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-width: 320px;
+        background: var(--paper);
+      }
+
+      body {
+        min-height: 100svh;
+        margin: 0;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        background:
+          linear-gradient(90deg, transparent 49.8%, var(--line) 50%, transparent 50.2%),
+          radial-gradient(circle at 80% 12%, rgba(214, 60, 47, 0.11), transparent 25rem),
+          var(--paper);
+      }
+
+      main {
+        min-height: 100svh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        padding: clamp(1.25rem, 3vw, 3rem);
+      }
+
+      header,
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        font-family: "Courier New", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      header {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .mark {
+        width: 0.65rem;
+        aspect-ratio: 1;
+        background: var(--red);
+        transform: rotate(45deg);
+      }
+
+      .hero {
+        display: grid;
+        align-content: center;
+        padding: 10vh 0;
+      }
+
+      .eyebrow {
+        margin: 0 0 1.5rem;
+        color: var(--red);
+        font-family: "Courier New", monospace;
+        font-size: clamp(0.7rem, 1.3vw, 0.85rem);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        animation: reveal 700ms 100ms both;
+      }
+
+      h1 {
+        max-width: 9ch;
+        margin: 0;
+        font-size: clamp(4rem, 14vw, 12rem);
+        font-weight: 400;
+        letter-spacing: -0.07em;
+        line-height: 0.78;
+        animation: reveal 900ms 220ms both;
+      }
+
+      .note {
+        justify-self: end;
+        max-width: 25rem;
+        margin: clamp(2.5rem, 7vw, 6rem) 0 0;
+        padding-left: 1rem;
+        border-left: 3px solid var(--red);
+        font-size: clamp(1rem, 1.8vw, 1.35rem);
+        line-height: 1.55;
+        animation: reveal 800ms 420ms both;
+      }
+
+      footer {
+        padding-top: 1rem;
+        border-top: 1px solid var(--line);
+      }
+
+      a {
+        color: inherit;
+        text-underline-offset: 0.3em;
+        transition: color 180ms ease;
+      }
+
+      a:hover,
+      a:focus-visible {
+        color: var(--red);
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(1.2rem);
+        }
+      }
+
+      @media (max-width: 600px) {
+        body {
+          background:
+            radial-gradient(circle at 85% 8%, rgba(214, 60, 47, 0.12), transparent 17rem),
+            var(--paper);
+        }
+
+        h1 {
+          font-size: clamp(4rem, 22vw, 7rem);
+        }
+
+        footer span:last-child {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <span>jiaxuanyang.com</span>
+        <span class="mark" aria-hidden="true"></span>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Personal space · 2026</p>
+        <h1 id="page-title">Yang<br />Jiaxuan</h1>
+        <p class="note">你好。这里是我的个人网站，内容正在慢慢长出来。</p>
+      </section>
+
+      <footer>
+        <a href="https://github.com/konichan-7" rel="me">GitHub ↗</a>
+        <span>Made with curiosity</span>
+      </footer>
+    </main>
+  </body>
+</html>
